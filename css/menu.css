@@ -1,0 +1,90 @@
+
+ @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap');
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'outfit', sans-serif;
+}
+
+body {
+    height: 100vh;
+    background-color: rgb(248, 236, 253);
+}
+
+nav.menu-lateral {
+    width: 80px;
+    overflow: hidden;
+    height: 100%;
+    background-color: rgb(22, 22, 22);
+    padding: 20px 0 20px 1%;
+    box-shadow: 4px 0 0 rgb(97, 8, 148);
+
+    position: fixed;
+    top: 0;
+    bottom: 0;
+
+    transition: .3s;
+    overflow-y: scroll;
+
+}
+.menu-lateral::-webkit-scrollbar {
+    width: 0;  /* Oculta a barra de rolagem vertical */
+}
+nav.menu-lateral.expandir{
+    width: 270px;
+    transition: .7s;
+}
+
+.btn-expandir {
+    width: 100%;
+    padding: 10px;
+}
+
+.btn-expandir>i {
+    color: aliceblue;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+.ul-menu {
+    height: 100%;
+    list-style-type: none;
+}
+.ul-menu .item-menu{
+    transition: .5s;
+}
+.ul-menu .ativo{
+    background-color:rgb(97, 8, 148) ;
+}
+
+.ul-menu .item-menu:hover{
+    background-color: rgb(97, 8, 148);
+}
+.ul-menu .item-menu a{
+    color: aliceblue;
+    text-decoration: none;
+    font-size: 18px;
+    padding: 20px 4%;
+    display: flex;
+    margin-bottom: 20px;
+    align-items: center;
+    
+}
+
+.ul-menu .item-menu a .txt-link{
+    margin-left: 70px;
+    transition: .8s;
+    opacity: 0;
+    
+}
+nav.menu-lateral.expandir .txt-link{
+    margin-left: 40px;
+    opacity: 1;
+}
+.ul-menu .item-menu a .icon > i{
+    font-size: 23px;
+    margin-left: 10px;
+}
