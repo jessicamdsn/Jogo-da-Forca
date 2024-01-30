@@ -1,10 +1,13 @@
 var menuItem = document.querySelectorAll('.item-menu');
+var tema = document.getElementById('tema');
 
 function selectLink(){
+
     menuItem.forEach((item)=>
     item.classList.remove('ativo') //remove classlist do q n clicou
     )
     this.classList.add('ativo')  // add classlist do clicado
+    tema.textContent = 'Tema: ' + this.innerText;
 }
 
 menuItem.forEach((item)=>

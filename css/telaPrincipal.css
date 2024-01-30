@@ -32,3 +32,9 @@
     border: 1px solid;
     border-radius: 5px;
 }
+.letras .letra.certo{
+background-color: rgb(107, 241, 80);
+}
+.letras .letra.errado{
+    background-color: rgb(250, 91, 91);
+    }
