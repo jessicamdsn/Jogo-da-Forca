@@ -20,7 +20,7 @@ nav.menu-lateral {
     height: 100%;
     background-color: rgb(22, 22, 22);
     padding: 20px 0 20px 1%;
-    box-shadow: 4px 0 0 rgb(97, 8, 148);
+    box-shadow: 4px 0 0 rgb(121, 19, 180);
 
     position: fixed;
     top: 0;
@@ -57,11 +57,11 @@ nav.menu-lateral.expandir{
     transition: .5s;
 }
 .ul-menu .ativo{
-    background-color:rgb(97, 8, 148) ;
+    background-color:rgb(121, 19, 180);
 }
 
 .ul-menu .item-menu:hover{
-    background-color: rgb(97, 8, 148);
+    background-color: rgb(121, 19, 180);
 }
 .ul-menu .item-menu a{
     color: aliceblue;

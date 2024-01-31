@@ -30,6 +30,8 @@ letra.forEach((letra) => {
 
 function atualizarJogo(){
     mostrarLetrasCertas();
+    desenharForca();
+    checarJogo();
 }
 function mostrarLetrasCertas(){
 const containerPalavraSecreta = document.querySelector(".palavra-secreta-container");
@@ -42,10 +44,40 @@ palavraSecreta.split("").forEach((letraClicada) => {
   }
 });
 }
+function checarJogo() {
+    let mensagem = "";
+    const containerPalavraSecreta = document.querySelector(".palavra-secreta-container");
+    const partesCorpo = document.querySelectorAll(".forca-parte");
+  
+    if (letrasErradas.length === partesCorpo.length) {
+      mensagem = "Fim de jogo! Você perdeu!";
+    }
+    if (palavraSecreta.split("").every(letra => letrasCorretas.includes(letra))) {
+    //if (palavraSecreta === containerPalavraSecreta.innerText) {
+      mensagem = "Parabéns! Você ganhou!";
+    }
+  
+    if (mensagem) {
+      document.querySelector("#mensagem").innerHTML = mensagem;
+      document.querySelector(".popup-container").style.display = "flex";
+    }
+  }
+  
+
+function desenharForca() {
+    const partesCorpo = document.querySelectorAll(".forca-parte");
+    for (let i = 0; i < letrasErradas.length; i++) {
+      partesCorpo[i].style.display = "block";
+    }
+  }
 
 function mostrarAvisoLetraRepetida(){
     alert("Você já usou essa letra");
 }
+function reiniciarJogo() {
+    window.location.reload();
+  }
+  
 
 
 
@@ -59,22 +91,3 @@ function mostrarAvisoLetraRepetida(){
 
 
 
-
-function selectLink(){
-
-    letra.forEach((item)=>
-    item.classList.remove('ativo') 
-    )
-    if(palavraPossuiLetra= true){
-        this.classList.add('certo') 
-     //ADICIONAR LETRA NA PALAVRA
-    }else{
-        this.classList.add('errado')  
-    
-    }
-    
-}
-
-menuItem.forEach((item)=>
-item.addEventListener('click',selectLink)
-)
