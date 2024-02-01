@@ -19,7 +19,7 @@
             <i class="bi bi-list" id="btn-exp"></i>
         </div>
         <ul class="ul-menu">
-            <li class="item-menu ativo">
+            <li class="item-menu ">
                 <a href="#">
                     <span class="icon"><i class="bi bi-shuffle"></i></span>
                     <span class="txt-link">Aleatorio</span>
@@ -52,7 +52,7 @@
             <li class="item-menu">
                 <a href="#">
                     <span class="icon"><i class="bi bi-suitcase-lg-fill"></i></span>
-                    <span class="txt-link">Profissões</span>
+                    <span class="txt-link">Profissoes</span>
                 </a>
             </li>
 
@@ -66,10 +66,12 @@
                 <h1 class="titulo"> Jogo da Forca </h1>
             </div>
             <div>
-                <h3 id="tema">tema: Aleatorio</h3>
+                <h2 id="tema">Escolha um tema</h2>
             </div>
-            <div class="espaco-letras palavra-secreta-container"> Digite uma letra para iniciar</div>
-            <div class="letras">
+            <div class="aviso"></div>
+            <div class="espaco-letras palavra-secreta-container"> </div>
+            
+            <div class="letras" style="display: none;">
                 <ul>
                     <li> <button class="letra">Q</button></li>
                     <li> <button class="letra">W</button></li>
@@ -107,12 +109,12 @@
             </div>
         </section>
         <section class="tela-imagem">
-            <svg height="250" width="200" class="forca">
+            <svg height="250" width="200" class="forca" >
                 <!-- forca -->
-                <line x1="140" y1="20" x2="60" y2="20" />
-                <line x1="60" y1="20" x2="60" y2="50" />
-                <line x1="140" y1="20" x2="140" y2="230" />
-                <line x1="170" y1="230" x2="110" y2="230" />
+                <line x1="140" y1="20" x2="60" y2="20" style="display: none;" class="linha" />
+                <line x1="60" y1="20" x2="60" y2="50" style="display: none;" class="linha"/>
+                <line x1="140" y1="20" x2="140" y2="230" style="display: none;" class="linha"/>
+                <line x1="170" y1="230" x2="110" y2="230" style="display: none;" class="linha"/>
             
                 <!-- cabeça -->
                 <circle cx="60" cy="70" r="20" class="forca-parte" />
@@ -134,7 +136,7 @@
 
             </div>
         </section>
-        
+
         <div class="popup-container">
             <div class="popup">
               <h2 id="mensagem"></h2>
