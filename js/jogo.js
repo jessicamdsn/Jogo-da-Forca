@@ -8,12 +8,12 @@ var thisElement;
 var temaSelecionado;
 var palavraSecreta = "";
 
-const frutas = ["BANANA", "UVA", "PITANGA", "MELANCIA", "LARANJA"];
-const aleatorio = ["BOLA", "RESTAURANTE", "PETECA", "PAMONHA", "CINEMA"];
-const paises = ["BRASIL", "URUGUAI", "MEXICO", "PORTUGAL", "CHINA"];
-const adjetivos = ["BONITO", "ALTO", "CRIATIVO", "CARINHOSO", "TIMIDO"];
-const animais = ["GATO", "CACHORRO", "COELHO", "CAVALO", "FUINHA"];
-const profissoes = ["MEDICO", "ENGENHEIRO", "MOTORISTA", "PROGRAMADOR", "VENDEDOR"];
+const frutas = ["BANANA", "UVA", "PITANGA", "MELANCIA", "LARANJA", "ABACAXI"];
+const aleatorio = ["BOLA", "RESTAURANTE", "PETECA", "PAMONHA", "CINEMA", "PALAVRA"];
+const paises = ["BRASIL", "URUGUAI", "MEXICO", "PORTUGAL", "CHINA", "GRECIA"];
+const adjetivos = ["BONITO", "ALTO", "CRIATIVO", "GENTIL", "TIMIDO", "ESPERTO"];
+const animais = ["GATO", "CACHORRO", "COELHO", "CAVALO", "FUINHA", "ELEFANTE"];
+const profissoes = ["MEDICO", "ENGENHEIRO", "MOTORISTA", "PROGRAMADOR", "VENDEDOR", "ENFERMEIRA"];
 const letrasErradas = [];
 const letrasCorretas = [];
 
@@ -34,7 +34,6 @@ function selectLink() {
         aparecerItensJogo();
     }
     
-
     switch (thisElement.innerText) {
         case 'Aleatorio':
             temaSelecionado = aleatorio;
@@ -90,6 +89,7 @@ function atualizarJogo() {
     apagarAviso()
     aparecerItensJogo()
 }
+
 function reiniciarJogoExecutado() {
 
     aviso.textContent = 'Digite uma letra para iniciar';
@@ -112,15 +112,18 @@ function reiniciarJogoExecutado() {
     });
     
 }
+
 function aparecerItensJogo(){
     const linhas = document.querySelectorAll(".linha");
     linhas.forEach(linha => linha.style.display = 'block');
     letras.style.display = 'block';
 }
+
 function apagarAviso(){
     //aviso.textContent ='';
     aviso.style.display = 'none';
 }
+
 function mostrarLetrasCertas() {
     const containerPalavraSecreta = document.querySelector(".palavra-secreta-container");
     containerPalavraSecreta.innerHTML = "";
@@ -132,6 +135,7 @@ function mostrarLetrasCertas() {
         }
     });
 }
+
 function checarJogo() {
     let mensagem = "";
     const containerPalavraSecreta = document.querySelector(".palavra-secreta-container");
@@ -161,20 +165,14 @@ function desenharForca() {
 function mostrarAvisoLetraRepetida() {
     alert("Você já usou essa letra");
 }
+
 function reiniciarJogo() {
-    window.location.reload();
+    reiniciarJogoExecutado();
+    document.querySelector(".popup-container").style.display = "none";
+    palavraSecreta = temaSelecionado[Math.floor(Math.random() * temaSelecionado.length)];
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+ function mudarTema(){
+     window.location.reload();
+     menuLateral.classList.toggle('expandir')
+}
