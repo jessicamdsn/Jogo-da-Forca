@@ -3,6 +3,7 @@ var letra = document.querySelectorAll('.letra');
 var aviso = document.querySelector('.aviso')
 
 const divDosCards = document.querySelectorAll('.card-box');
+var titulo= document.querySelector('.titulo');
 
 var cardComTemas= document.querySelector('.temas-cards');
 var menuLateral = document.querySelector('.menu-lateral');
@@ -143,6 +144,13 @@ function aparecerItensJogo(){
     letras.style.display = 'block';
     menuLateral.style.display = "block";
     cardComTemas.style.display = "none";
+
+    const larguraTela = window.innerWidth;
+
+    // Verifica se a largura da tela é menor ou igual a 860px
+    if (larguraTela <= 860) {
+        titulo.style.marginBottom = '230px';
+    }
 }
 
 function apagarAviso(){

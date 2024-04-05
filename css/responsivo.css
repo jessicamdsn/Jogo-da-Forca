@@ -1,20 +1,24 @@
 @media (max-width: 860px) {
 
-    .titulo{
+    .titulo {
         margin: 18px;
         font-size: 28px;
-        margin-bottom: 230px;
+        
     }
-    .espaco-letras{
+
+    .espaco-letras {
         font-size: 28px;
         margin-top: 0px;
     }
-    h2{
+
+    h2 {
         font-size: 20px;
+        padding: 0px;
     }
-    .aviso{
+
+    .aviso {
         font-size: 20px;
-        margin-top: 20px;
+        margin-top: 0px;
     }
 
 
@@ -29,10 +33,12 @@
     .letras {
         top: 70%;
     }
+
     .letras ul {
         gap: 4px;
         margin-bottom: 5px;
     }
+
     .letras ul li button {
         width: 26px;
         height: 35px;
@@ -47,30 +53,56 @@
         padding: 10px 0 10px .5%;
         box-shadow: 3px 0 0 rgb(121, 19, 180);
     }
-    nav.menu-lateral.expandir{
+
+    nav.menu-lateral.expandir {
         width: 100%;
     }
+
     .btn-expandir {
         padding: 0px;
     }
+
     .btn-expandir>i {
         font-size: 30px;
     }
-    .ul-menu .item-menu a{
+
+    .ul-menu .item-menu a {
         font-size: 18px;
     }
-    .ul-menu .item-menu a .icon > i{
+
+    .ul-menu .item-menu a .icon>i {
         font-size: 18px;
         margin-left: 5px;
     }
 
 
-     .popup {
+    .popup {
         font-size: 15px;
-      }
-      
-      .popup button {
+    }
+
+    .popup button {
         width: 120px;
         font-size: 15px;
-      }
+    }
+
+    .temas-cards{
+        width: 98%;
+        
+    }
+    .card-box{
+      
+        width: 120px;
+        padding: 35px 0px 35px 0px;
+      
+    }
+    
+    .card{
+        font-size: 15px;
+    }
+    .icon{
+        font-size: 15px;
+    }
+
+
+
 }
