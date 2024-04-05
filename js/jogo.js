@@ -2,6 +2,8 @@ var letras = document.querySelector('.letras');
 var letra = document.querySelectorAll('.letra');
 var aviso = document.querySelector('.aviso')
 
+const divDosCards = document.querySelectorAll('.card-box');
+
 var cardComTemas= document.querySelector('.temas-cards');
 var menuLateral = document.querySelector('.menu-lateral');
 var menuItem = document.querySelectorAll('.item-menu');
@@ -12,7 +14,6 @@ var temaSelecionado;
 var palavraSecreta = "";
 
 const frutas = ["BANANA", "UVA", "PITANGA", "MELANCIA", "LARANJA", "ABACAXI"];
-const aleatorio = ["BOLA", "RESTAURANTE", "PETECA", "PAMONHA", "CINEMA", "PALAVRA"];
 const paises = ["BRASIL", "URUGUAI", "MEXICO", "PORTUGAL", "CHINA", "GRECIA"];
 const adjetivos = ["BONITO", "ALTO", "CRIATIVO", "GENTIL", "TIMIDO", "ESPERTO"];
 const animais = ["GATO", "CACHORRO", "COELHO", "CAVALO", "FUINHA", "ELEFANTE"];
@@ -22,15 +23,17 @@ const letrasCorretas = [];
 
 
 function selectLink() {
+
     if (window.getComputedStyle(menuLateral).display === 'block') {
-        
         menuItem.forEach((item) =>
         item.classList.remove('ativo'))
     this.classList.add('ativo'); 
     }
+
     aviso.textContent ='Digite uma letra para iniciar';
     tema.textContent = 'Tema: ' + this.innerText;
     thisElement=this; 
+
     
     if (letrasCorretas.length > 0 || letrasErradas.length > 0) {
         // Se já foram digitadas letras, reinicia o jogo
@@ -42,7 +45,7 @@ function selectLink() {
     
     switch (thisElement.innerText) {
         case 'Aleatorio':
-            temaSelecionado = aleatorio;
+            selecionarTemaAleatorio();
             break;
         case 'Frutas':
             temaSelecionado = frutas;
@@ -66,8 +69,19 @@ function selectLink() {
     console.log('Palavra secreta:'+ palavraSecreta);
     
 }
-card.forEach((item) =>
-    item.addEventListener('click', selectLink))
+
+divDosCards.forEach((card) => {
+    card.addEventListener('click', () => {
+        const spanCard = card.querySelector('.card');
+        if (spanCard) {
+            spanCard.click(); // Simula o clique no span quando a div for clicada
+        }
+    });
+});
+
+card.forEach((item) => {
+    item.addEventListener('click', selectLink);
+});
     
 menuItem.forEach((item) =>
     item.addEventListener('click', selectLink))
@@ -187,5 +201,18 @@ function reiniciarJogo() {
  function mudarTema(){
      window.location.reload();
      //menuLateral.classList.toggle('expandir')
+}
+function selecionarTemaAleatorio() {
+    const temasDisponiveis = [
+        { nome: 'Frutas', temas: frutas },
+        { nome: 'Países', temas: paises },
+        { nome: 'Adjetivos', temas: adjetivos },
+        { nome: 'Animais', temas: animais },
+        { nome: 'Profissões', temas: profissoes }
+    ];
+    const temaAleatorioIndex = Math.floor(Math.random() * temasDisponiveis.length);
+    temaSelecionado = temasDisponiveis[temaAleatorioIndex].temas;
+    const nomeDoTemaSelecionado = temasDisponiveis[temaAleatorioIndex].nome;
+    tema.textContent = 'Tema: ' + nomeDoTemaSelecionado;
 }
 

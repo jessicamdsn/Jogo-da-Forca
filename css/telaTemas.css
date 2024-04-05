@@ -1,4 +1,35 @@
 .temas-cards{
+    width: 90%;
+    padding: 20px;
     position: absolute;
-    top:40%;
+    top:25%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.card-box{
+    color: aliceblue;
+    background-color:rgb(121, 19, 180);
+
+    width: 280px;
+    padding: 52px 0px 52px 0px;
+    margin: 1%;
+    text-align: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    gap: 17px;
+    cursor: pointer;
+}
+.card-box:hover{
+    background-color: rgb(118, 15, 150);
+    transition: 0.9s;
+    transform: scale(1.1)
+
+}
+.card{
+    font-size: 25px;
+}
+.icon{
+    font-size: 25px;
 }
