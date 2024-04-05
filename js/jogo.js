@@ -2,7 +2,10 @@ var letras = document.querySelector('.letras');
 var letra = document.querySelectorAll('.letra');
 var aviso = document.querySelector('.aviso')
 
+var cardComTemas= document.querySelector('.temas-cards');
+var menuLateral = document.querySelector('.menu-lateral');
 var menuItem = document.querySelectorAll('.item-menu');
+var card = document.querySelectorAll('.card');
 var tema = document.getElementById('tema');
 var thisElement;
 var temaSelecionado;
@@ -19,9 +22,12 @@ const letrasCorretas = [];
 
 
 function selectLink() {
-    menuItem.forEach((item) =>
+    if (window.getComputedStyle(menuLateral).display === 'block') {
+        
+        menuItem.forEach((item) =>
         item.classList.remove('ativo'))
     this.classList.add('ativo'); 
+    }
     aviso.textContent ='Digite uma letra para iniciar';
     tema.textContent = 'Tema: ' + this.innerText;
     thisElement=this; 
@@ -57,8 +63,12 @@ function selectLink() {
            alert('não pegou')
     }
     palavraSecreta = temaSelecionado[Math.floor(Math.random() * temaSelecionado.length)];
+    console.log('Palavra secreta:'+ palavraSecreta);
     
 }
+card.forEach((item) =>
+    item.addEventListener('click', selectLink))
+    
 menuItem.forEach((item) =>
     item.addEventListener('click', selectLink))
     
@@ -117,6 +127,8 @@ function aparecerItensJogo(){
     const linhas = document.querySelectorAll(".linha");
     linhas.forEach(linha => linha.style.display = 'block');
     letras.style.display = 'block';
+    menuLateral.style.display = "block";
+    cardComTemas.style.display = "none";
 }
 
 function apagarAviso(){
@@ -174,5 +186,6 @@ function reiniciarJogo() {
 
  function mudarTema(){
      window.location.reload();
-     menuLateral.classList.toggle('expandir')
+     //menuLateral.classList.toggle('expandir')
 }
+
