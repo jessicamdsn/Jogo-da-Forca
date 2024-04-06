@@ -102,6 +102,11 @@
     .icon{
         font-size: 15px;
     }
+    .card-box:hover{
+        transition: 0s;
+        transform: scale(1)
+    
+    }
 
 
 

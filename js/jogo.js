@@ -4,6 +4,7 @@ var aviso = document.querySelector('.aviso')
 
 const divDosCards = document.querySelectorAll('.card-box');
 var titulo= document.querySelector('.titulo');
+var telaImagem= document.querySelector('.tela-imagem');
 
 var cardComTemas= document.querySelector('.temas-cards');
 var menuLateral = document.querySelector('.menu-lateral');
@@ -144,6 +145,7 @@ function aparecerItensJogo(){
     letras.style.display = 'block';
     menuLateral.style.display = "block";
     cardComTemas.style.display = "none";
+    telaImagem.style.display = "block";
 
     const larguraTela = window.innerWidth;
 
