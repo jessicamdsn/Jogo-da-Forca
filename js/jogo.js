@@ -147,12 +147,13 @@ function aparecerItensJogo(){
     cardComTemas.style.display = "none";
     telaImagem.style.display = "block";
 
-    const larguraTela = window.innerWidth;
 
+    const larguraTela = window.innerWidth;
     // Verifica se a largura da tela é menor ou igual a 860px
     if (larguraTela <= 860) {
         titulo.style.marginBottom = '230px';
     }
+   
 }
 
 function apagarAviso(){
