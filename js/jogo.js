@@ -109,6 +109,7 @@ letra.forEach((letra) => {
 });
 
 function atualizarJogo() {
+    
     mostrarLetrasCertas();
     desenharForca();
     checarJogo();
@@ -140,6 +141,7 @@ function reiniciarJogoExecutado() {
 }
 
 function aparecerItensJogo(){
+
     const linhas = document.querySelectorAll(".linha");
     linhas.forEach(linha => linha.style.display = 'block');
     letras.style.display = 'block';
@@ -162,6 +164,7 @@ function apagarAviso(){
 }
 
 function mostrarLetrasCertas() {
+
     const containerPalavraSecreta = document.querySelector(".palavra-secreta-container");
     containerPalavraSecreta.innerHTML = "";
     palavraSecreta.split("").forEach((letraClicada) => {
@@ -174,6 +177,7 @@ function mostrarLetrasCertas() {
 }
 
 function checarJogo() {
+
     let mensagem = "";
     const containerPalavraSecreta = document.querySelector(".palavra-secreta-container");
     const partesCorpo = document.querySelectorAll(".forca-parte");
@@ -193,6 +197,7 @@ function checarJogo() {
 }
 
 function desenharForca() {
+
     const partesCorpo = document.querySelectorAll(".forca-parte");
     for (let i = 0; i < letrasErradas.length; i++) {
         partesCorpo[i].style.display = "block";
@@ -200,20 +205,25 @@ function desenharForca() {
 }
 
 function mostrarAvisoLetraRepetida() {
+
     alert("Você já usou essa letra");
 }
 
 function reiniciarJogo() {
+
     reiniciarJogoExecutado();
     document.querySelector(".popup-container").style.display = "none";
     palavraSecreta = temaSelecionado[Math.floor(Math.random() * temaSelecionado.length)];
 }
 
  function mudarTema(){
+
      window.location.reload();
      //menuLateral.classList.toggle('expandir')
 }
+
 function selecionarTemaAleatorio() {
+
     const temasDisponiveis = [
         { nome: 'Frutas', temas: frutas },
         { nome: 'Países', temas: paises },
