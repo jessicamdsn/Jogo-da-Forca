@@ -3,8 +3,8 @@
 Um jogo da forca responsivo feito em JavaScript, HTML e CSS.
 
 <div>
-<img  src="jogo-da-forca.gif" alt="Exemplo gif" width="20%"/>
-<img  src="jogo-da-forcacll.gif" alt="Exemplo gif" width="20%" />
+  <img  src="jogo-da-forcacll.gif" alt="Exemplo gif" width="20%" />
+<img  src="jogo-da-forca.gif" alt="Exemplo gif" width="60%"/>
 </div>
 
 ## Descrição
